@@ -25,3 +25,15 @@ add_action( 'after_setup_theme', 'WSU_Inline_SVG' );
 function WSU_Inline_SVG() {
 	return WSU_Inline_SVG::get_instance();
 }
+
+/**
+ * Registers provided inline SVG data to an SVG ID for use.
+ *
+ * @param $svg_id
+ * @param $svg_data
+ *
+ * @return true|WP_Error True if successful. WP_Error object if not.
+ */
+function wsu_register_inline_svg( $svg_id, $svg_data ) {
+	WSU_Inline_SVG()->register_inline_svg( $svg_id, $svg_data );
+}
