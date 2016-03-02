@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="WSU Inline SVG">
+    <description>Sniffs for the coding standards of the WSU Inline SVG plugin</description>
+
+    <rule ref="WordPress-Extra">
+        <exclude name="WordPress.NamingConventions.ValidFunctionName" />
+    </rule>
+</ruleset>
