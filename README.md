@@ -6,16 +6,11 @@ A shortcode for embedding registered inline SVGs in WordPress.
 
 ## Registering an SVG
 
-Adding a snippet similar to the following will register an inline SVG for use with the `[wsu_inline_svg]` shortcode.
+The WSU Inline SVG plugin provides a `wsu_register_inline_svg` action. Adding a snippet similar to the following will register an inline SVG for use with the `[wsu_inline_svg]` shortcode.
 
 ```
-add_action( 'init', 'my_theme_register_inline_svg' );
+add_action( 'wsu_register_inline_svg', 'my_theme_register_inline_svg' );
 function my_theme_register_inline_svg() {
-    // Only register the SVG if the WSU Inline SVG plugin is enabled.
-    if ( ! function_exists( 'wsu_register_inline_svg' ) ) {
-        return;
-    }
-
 	ob_start();
 	?><svg><!-- complete SVG is pasted here --></svg><?php
 	$svg_data = ob_get_contents();

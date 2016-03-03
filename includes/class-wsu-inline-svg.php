@@ -33,7 +33,8 @@ class WSU_Inline_SVG {
 	 * @since 0.0.1
 	 */
 	public function setup_hooks() {
-		add_action( 'init', array( $this, 'add_shortcode' ) );
+		add_action( 'init', array( $this, 'add_shortcode' ), 10 );
+		add_action( 'init', array( $this, 'register_svgs' ), 15 );
 	}
 
 	/**
@@ -43,6 +44,14 @@ class WSU_Inline_SVG {
 	 */
 	public function add_shortcode() {
 		add_shortcode( 'wsu_inline_svg', array( $this, 'wsu_inline_svg_callback' ) );
+	}
+
+	/**
+	 * Fire the `wsu_register_inline_svg` hook so that themes and plugins do not
+	 * need to explicitly check for the existence of this plugin.
+	 */
+	public function register_svgs() {
+		do_action( 'wsu_register_inline_svg' );
 	}
 
 	/**
