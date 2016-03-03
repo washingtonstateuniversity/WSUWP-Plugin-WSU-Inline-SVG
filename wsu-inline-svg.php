@@ -35,5 +35,5 @@ function WSU_Inline_SVG() {
  * @return true|WP_Error True if successful. WP_Error object if not.
  */
 function wsu_register_inline_svg( $svg_id, $svg_data ) {
-	WSU_Inline_SVG()->register_inline_svg( $svg_id, $svg_data );
+	return WSU_Inline_SVG()->register_inline_svg( $svg_id, $svg_data );
 }
