@@ -11,6 +11,11 @@ Adding a snippet similar to the following will register an inline SVG for use wi
 ```
 add_action( 'init', 'my_theme_register_inline_svg' );
 function my_theme_register_inline_svg() {
+    // Only register the SVG if the WSU Inline SVG plugin is enabled.
+    if ( ! function_exists( 'wsu_register_inline_svg' ) ) {
+        return;
+    }
+
 	ob_start();
 	?><svg><!-- complete SVG is pasted here --></svg><?php
 	$svg_data = ob_get_contents();
