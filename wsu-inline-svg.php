@@ -20,6 +20,8 @@ add_action( 'after_setup_theme', 'WSU_Inline_SVG' );
 /**
  * Start things up.
  *
+ * @since 0.0.1
+ *
  * @return \WSU_Inline_SVG
  */
 function WSU_Inline_SVG() {
@@ -28,6 +30,8 @@ function WSU_Inline_SVG() {
 
 /**
  * Registers provided inline SVG data to an SVG ID for use.
+ *
+ * @since 0.0.1
  *
  * @param $svg_id
  * @param $svg_data

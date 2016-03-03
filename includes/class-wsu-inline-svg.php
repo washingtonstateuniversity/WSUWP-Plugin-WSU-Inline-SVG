@@ -49,6 +49,8 @@ class WSU_Inline_SVG {
 	/**
 	 * Fire the `wsu_register_inline_svg` hook so that themes and plugins do not
 	 * need to explicitly check for the existence of this plugin.
+	 *
+	 * @since 0.0.1
 	 */
 	public function register_svgs() {
 		do_action( 'wsu_register_inline_svg' );
@@ -56,6 +58,8 @@ class WSU_Inline_SVG {
 
 	/**
 	 * Process the `wsu_inline_svg` shortcode.
+	 *
+	 * @since 0.0.1
 	 *
 	 * @param $atts
 	 *
@@ -75,6 +79,8 @@ class WSU_Inline_SVG {
 
 	/**
 	 * Handle the registration of inline SVG data.
+	 *
+	 * @since 0.0.1
 	 *
 	 * @param $svg_id
 	 * @param $svg_data
